@@ -34,17 +34,31 @@ describe('Breville oven visual fixtures', () => {
     }
   });
 
-  it('does not invent live temperatures, door state, or a countdown when readings are unavailable', async () => {
+  it('omits retained temperatures, door state, and countdowns for stale statuses', async () => {
+    for (const status of ['offline', 'missing', 'unknown', 'updating', 'waiting_for_button']) {
+      const root = await renderFixture({
+        status,
+        temperature: { state: '212', attributes: { unit_of_measurement: '°F' } },
+        target_temperature: { state: '400', attributes: { unit_of_measurement: '°F' } },
+        door: 'on',
+        time_remaining: '12',
+      });
+      expect(root.querySelector('.breville-current-temp')).toBeNull();
+      expect(root.querySelector('.breville-target-temp')).toBeNull();
+      expect(root.querySelector('.breville-door-warning')).toBeNull();
+      expect(root.querySelector('.breville-time')).toBeNull();
+    }
+  });
+
+  it('does not present idle presets as live targets and formats each temperature with its own unit', async () => {
     const root = await renderFixture({
-      status: 'offline',
-      temperature: { state: 'unavailable', attributes: { unit_of_measurement: '°F' } },
-      target_temperature: 'unknown',
-      door: 'unavailable',
-      time_remaining: 'unavailable',
+      status: 'idle',
+      temperature: { state: '25', attributes: { unit_of_measurement: '°C' } },
+      target_temperature: { state: '400', attributes: { unit_of_measurement: '°F' } },
+      mode: 'bake',
     });
-    expect(root.querySelector('.breville-current-temp')?.textContent).toContain('—');
-    expect(root.querySelector('.breville-target-temp')?.textContent).toContain('—');
-    expect(root.querySelector('.breville-door-warning')).toBeNull();
-    expect(root.querySelector('.breville-time')).toBeNull();
+    expect(root.querySelector('.breville-current-temp')?.textContent).toContain('25 °C');
+    expect(root.querySelector('.breville-target-temp')).toBeNull();
+    expect(root.querySelector('.breville-mode')).toBeNull();
   });
 });

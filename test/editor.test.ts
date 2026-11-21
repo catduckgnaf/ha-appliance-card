@@ -345,6 +345,15 @@ describe('ApplianceCardEditor with LocalThings', () => {
     expect(autofilled.door_entity).toBe('binary_sensor.breville_oven_door');
   });
 
+  it('shows Breville setup fields before configuration without duplicating shared fields', () => {
+    const editor = document.createElement('smartthings-card-editor') as any;
+    editor._config = { type: 'custom:appliance-card', appliance_type: 'oven' };
+    const names = editor._schema().map((field: any) => field.name);
+    expect(names).toContain('breville_status_entity');
+    expect(names.filter((name: string) => name === 'mode_entity')).toHaveLength(1);
+    expect(names.filter((name: string) => name === 'time_entity')).toHaveLength(1);
+  });
+
   it('should autofill Bosch Home Connect dishwasher entities', () => {
     const editor = document.createElement('smartthings-card-editor') as ApplianceCardEditor;
     const homeConnectHass = {

@@ -128,8 +128,6 @@ export class ApplianceCardEditor extends LitElement {
     const brevilleSchema = [
       { name: 'breville_status_entity', label: 'Oven Status Entity (Optional)', selector: getEntitySelector('sensor') },
       { name: 'target_temperature_entity', label: 'Target Temperature Entity (Optional)', selector: getEntitySelector(['sensor', 'number']) },
-      { name: 'mode_entity', label: 'Active Oven Mode Entity (Optional)', selector: getEntitySelector(['sensor', 'select']) },
-      { name: 'time_entity', label: 'Time Remaining Entity (Optional)', selector: getEntitySelector('sensor') },
       { name: 'door_entity', label: 'Door Sensor (Optional)', selector: getEntitySelector('binary_sensor') },
     ];
 
@@ -275,7 +273,7 @@ export class ApplianceCardEditor extends LitElement {
       finalSchema = finalSchema.concat(commonApplianceSchema).concat(secondaryIconsSchema).concat(microwaveSchema);
     } else {
       finalSchema = finalSchema.concat(commonApplianceSchema).concat(secondaryIconsSchema);
-      if (this._config?.appliance_type === 'oven' && this._config?.breville_status_entity) finalSchema = finalSchema.concat(brevilleSchema);
+      if (this._config?.appliance_type === 'oven') finalSchema = finalSchema.concat(brevilleSchema);
     }
 
     return finalSchema.concat(footerSchema);
@@ -380,7 +378,7 @@ export class ApplianceCardEditor extends LitElement {
     };
 
     // Breville+ oven entities are mapped explicitly and only when this device exposes the oven status entity.
-    const isBrevilleOven = relevantEntities.some(id => /\.breville_oven_status$/.test(id));
+    const isBrevilleOven = deviceEntities.some(id => /\.breville_oven_status$/.test(id));
     if (type === 'oven' && isBrevilleOven) {
       newConfig.breville_status_entity = newConfig.breville_status_entity || findEntity(['_oven_status'], 'sensor');
       newConfig.temperature_entity = newConfig.temperature_entity || findEntity(['_oven_temperature'], 'sensor');
