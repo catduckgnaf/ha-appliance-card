@@ -188,6 +188,9 @@ export class ApplianceCard extends LitElement {
         this.config.fan_entity,
         this.config.light_entity,
         this.config.temperature_entity,
+        this.config.breville_status_entity,
+        this.config.target_temperature_entity,
+        this.config.door_entity,
         this.config.burner_left_front_on_entity,
         this.config.burner_left_rear_on_entity,
         this.config.burner_center_rear_on_entity,
@@ -283,6 +286,9 @@ export class ApplianceCard extends LitElement {
       : '--:--:--';
 
     const tempStateObj = this.config.temperature_entity ? this.hass.states[this.config.temperature_entity] : null;
+    const brevilleStatusObj = this.config.breville_status_entity ? this.hass.states[this.config.breville_status_entity] : null;
+    const targetTempObj = this.config.target_temperature_entity ? this.hass.states[this.config.target_temperature_entity] : null;
+    const doorObj = this.config.door_entity ? this.hass.states[this.config.door_entity] : null;
     const rawTempValue = this._templateResults['temperature_template'] !== undefined
       ? this._templateResults['temperature_template']
       : tempStateObj?.state;
@@ -304,6 +310,38 @@ export class ApplianceCard extends LitElement {
 
     if (this.config.appliance_type === 'cooktop') {
       return this._renderCooktop();
+    }
+
+    const brevilleStatus = brevilleStatusObj?.state;
+    const isBreville = Boolean(this.config.breville_status_entity);
+    const brevilleStatusLabel = isBreville
+      ? (!brevilleStatus || ['unknown', 'unavailable'].includes(brevilleStatus.toLowerCase())
+        ? 'Unavailable'
+        : ({ idle: 'Idle', preheating: 'Preheating', ready: 'Ready for food', cooking: 'Cooking', keeping_warm: 'Keeping warm', done: 'Done', offline: 'Offline', waiting_for_button: 'Waiting for button', error: 'Error', updating: 'Updating' } as Record<string, string>)[brevilleStatus.toLowerCase()] || brevilleStatus)
+      : '';
+
+    if (isBreville) {
+      const actual = tempStateObj?.state;
+      const target = targetTempObj?.state;
+      const doorOpen = doorObj?.state === 'on';
+      const mode = modeStateObj?.state;
+      const tempUnitLabel = tempStateObj?.attributes?.unit_of_measurement || targetTempObj?.attributes?.unit_of_measurement || '°F';
+      const temperature = (value?: string) => value && !['unknown', 'unavailable'].includes(value.toLowerCase()) && Number.isFinite(Number(value)) ? `${value} ${tempUnitLabel}` : '—';
+      return html`
+        <ha-card>
+          <div class="container oven breville-oven">
+            <div class="bg-layer" style="--bg-color-primary: ${bgColor}"></div>
+            <img class="appliance-img" src="${applianceImg}" alt="Breville smart oven" />
+            <div class="breville-readout" aria-label="Breville oven status">
+              <div class="breville-status">${brevilleStatusLabel}</div>
+              ${mode && !['unknown', 'unavailable'].includes(mode.toLowerCase()) ? html`<div class="breville-mode">${mode}</div>` : ''}
+              ${doorOpen ? html`<div class="breville-door-warning" role="status">Door open</div>` : ''}
+              <div class="breville-temperature"><span class="breville-current-temp">Current ${temperature(actual)}</span><span class="breville-target-temp">Target ${temperature(target)}</span></div>
+              ${timeState !== '--:--:--' && !['idle', 'done', 'offline', 'unavailable', 'error'].includes((brevilleStatus || '').toLowerCase()) ? html`<div class="breville-time">${timeState} remaining</div>` : ''}
+            </div>
+          </div>
+        </ha-card>
+      `;
     }
 
     return html`
