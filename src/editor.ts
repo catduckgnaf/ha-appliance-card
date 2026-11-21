@@ -28,6 +28,7 @@ export class ApplianceCardEditor extends LitElement {
       'govee',
       'govee_ble',
       'mqtt',
+      'delonghi_coffee',
     ];
 
     const getEntitySelector = (domain?: string | string[], multiple?: boolean) => {
@@ -244,6 +245,10 @@ export class ApplianceCardEditor extends LitElement {
       },
     ];
 
+    const coffeeMakerSchema = [
+      { name: 'alarm_code_entity', label: 'Alerts Entity (Optional)', selector: getEntitySelector(['sensor', 'binary_sensor']) },
+    ];
+
     const footerSchema = [
       { name: 'appliance_image', label: 'Appliance Image Path (Optional)', selector: { text: {} } },
       { name: 'background_color', label: 'Background Color (Optional)', selector: { color_rgb: {} } },
@@ -263,6 +268,8 @@ export class ApplianceCardEditor extends LitElement {
       finalSchema = finalSchema.concat(refrigeratorSchema);
     } else if (this._config?.appliance_type === 'cooktop') {
       finalSchema = finalSchema.concat(cooktopSchema).concat(secondaryIconsSchema);
+    } else if (this._config?.appliance_type === 'coffee_maker') {
+      finalSchema = finalSchema.concat(coffeeMakerSchema);
     } else if (this._config?.appliance_type === 'microwave') {
       finalSchema = finalSchema.concat(commonApplianceSchema).concat(secondaryIconsSchema).concat(microwaveSchema);
     } else {
@@ -350,6 +357,8 @@ export class ApplianceCardEditor extends LitElement {
         newConfig.appliance_type = 'dryer';
       } else if (allText.includes('microwave')) {
         newConfig.appliance_type = 'microwave';
+      } else if (allText.includes('coffee machine') || allText.includes('coffee_maker') || allText.includes('coffee maker')) {
+        newConfig.appliance_type = 'coffee_maker';
       } else if (allText.includes('kettle')) {
         newConfig.appliance_type = 'kettle';
       } else if (allText.includes('oven')) {
@@ -400,6 +409,12 @@ export class ApplianceCardEditor extends LitElement {
       newConfig.burner_left_rear_power_entity = newConfig.burner_left_rear_power_entity || findEntity(['_left_rear_power_pct'], 'sensor');
       newConfig.burner_right_front_power_entity = newConfig.burner_right_front_power_entity || findEntity(['_right_front_power_pct'], 'sensor');
       newConfig.burner_right_rear_power_entity = newConfig.burner_right_rear_power_entity || findEntity(['_right_rear_power_pct'], 'sensor');
+    }
+
+    if (type === 'coffee_maker') {
+      newConfig.machine_state_entity = newConfig.machine_state_entity || findEntity(['_machine_status'], 'sensor');
+      newConfig.power_entity = newConfig.power_entity || findEntity(['_power'], 'switch');
+      newConfig.alarm_code_entity = newConfig.alarm_code_entity || findEntity(['_blocking_alarms'], 'sensor');
     }
 
     if (type === 'refrigerator') {

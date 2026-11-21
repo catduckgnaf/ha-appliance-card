@@ -607,6 +607,12 @@ export class ApplianceCard extends LitElement {
         { name: 'others', left: '65%', icon: 'cooking' },
         { name: 'cooking', left: '65%', icon: 'cooking' },
       ],
+      coffee_maker: [
+        { name: 'brewing', left: '65%', icon: 'coffee' },
+        { name: 'coffee', left: '65%', icon: 'coffee' },
+        { name: 'espresso', left: '65%', icon: 'coffee' },
+        { name: 'heating', left: '65%', icon: 'boil' },
+      ],
       kettle: [
         { name: 'boiling', left: '65%', icon: 'boil' },
         { name: 'boil', left: '65%', icon: 'boil' },
