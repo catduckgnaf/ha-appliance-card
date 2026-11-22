@@ -128,17 +128,17 @@ export const styles = css`
     top: 50%;
     transform: translateY(-50%);
     height: 75%;
+    aspect-ratio: 535 / 661;
     max-width: 45%;
     z-index: 2;
-    display: flex;
   }
-  .breville-artwork .appliance-img {
+  .breville-oven .breville-artwork .appliance-img {
     position: static;
     transform: none;
-    height: auto;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    max-width: none;
+    object-fit: fill;
   }
   .breville-door-overlay {
     position: absolute;
