@@ -57,6 +57,32 @@ describe('Breville oven visual fixtures', () => {
     }
   });
 
+  it('shows an accessible warning and artwork overlay only for a confirmed open door with valid status', async () => {
+    const door = 'binary_sensor.breville_oven_door';
+    for (const status of ['idle', 'preheating', 'ready', 'cooking', 'keeping_warm', 'done']) {
+      const root = await renderFixture({ status, [door]: 'on' });
+      expect(root.querySelector('.breville-door-overlay')?.getAttribute('aria-hidden')).toBe('true');
+      expect(root.querySelector('.breville-door-warning[role="status"]')?.textContent).toContain('Door open');
+    }
+    for (const state of ['off', 'unknown', 'unavailable', 'missing']) {
+      const root = await renderFixture({ status: 'cooking', [door]: state });
+      expect(root.querySelector('.breville-door-overlay')).toBeNull();
+      expect(root.querySelector('.breville-door-warning')).toBeNull();
+    }
+    const missing = await renderFixture({ status: 'cooking' });
+    expect(missing.querySelector('.breville-door-overlay')).toBeNull();
+    for (const status of ['offline', 'missing', 'unknown', 'unavailable', 'updating', 'waiting_for_button']) {
+      const root = await renderFixture({ status, [door]: 'on' });
+      expect(root.querySelector('.breville-door-overlay')).toBeNull();
+      expect(root.querySelector('.breville-door-warning')).toBeNull();
+    }
+    const missingStatus = await renderFixture({ [door]: 'on' });
+    expect(missingStatus.querySelector('.breville-door-overlay')).toBeNull();
+    element.setConfig({ type: 'custom:appliance-card', appliance_type: 'oven', breville_status_entity: 'sensor.breville_oven_status' });
+    await element.updateComplete;
+    expect(element.shadowRoot!.querySelector('.breville-door-overlay')).toBeNull();
+  });
+
   it('does not present idle presets as live targets and formats each temperature with its own unit', async () => {
     const root = await renderFixture({
       status: 'idle',

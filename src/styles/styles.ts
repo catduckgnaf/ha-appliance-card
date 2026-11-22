@@ -121,6 +121,34 @@ export const styles = css`
     opacity: 0.7;
   }
 
+  /* The overlay is relative to the rendered artwork, not the card width. */
+  .breville-artwork {
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75%;
+    max-width: 45%;
+    z-index: 2;
+    display: flex;
+  }
+  .breville-artwork .appliance-img {
+    position: static;
+    transform: none;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .breville-door-overlay {
+    position: absolute;
+    inset: 20% 3% 15%;
+    border: 2px solid rgba(255, 82, 82, 0.85);
+    background: rgba(255, 82, 82, 0.24);
+    border-radius: 4px;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
   .breville-readout {
     position: absolute;
     z-index: 5;
@@ -142,7 +170,7 @@ export const styles = css`
   .breville-time { color: var(--accent-color, #ffb74d); font-variant-numeric: tabular-nums; }
   @media (max-width: 420px) {
     .breville-oven { min-height: 150px; }
-    .breville-oven .appliance-img { max-width: 38%; height: 65%; }
+    .breville-artwork { max-width: 38%; height: 65%; }
     .breville-readout { right: 3%; max-width: 60%; gap: 5px; font-size: 0.9em; }
   }
 

@@ -336,7 +336,10 @@ export class ApplianceCard extends LitElement {
         <ha-card>
           <div class="container oven breville-oven">
             <div class="bg-layer" style="--bg-color-primary: ${bgColor}"></div>
-            <img class="appliance-img" src="${applianceImg}" alt="Breville smart oven" />
+            <div class="breville-artwork">
+              <img class="appliance-img" src="${applianceImg}" alt="Breville smart oven" />
+              ${doorOpen ? html`<div class="breville-door-overlay" aria-hidden="true"></div>` : ''}
+            </div>
             <div class="breville-readout" aria-label="Breville oven status">
               <div class="breville-status">${brevilleStatusLabel}</div>
               ${validMode ? html`<div class="breville-mode">${mode}</div>` : ''}
