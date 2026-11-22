@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import '../src/appliance-card';
 import { ApplianceCard } from '../src/appliance-card';
+import { styles } from '../src/styles/styles';
 
 describe('Breville oven visual fixtures', () => {
   let element: ApplianceCard;
@@ -26,6 +27,12 @@ describe('Breville oven visual fixtures', () => {
     await element.updateComplete;
     return element.shadowRoot!;
   };
+
+  it('keeps the readout light on its dark background in either theme', () => {
+    const css = styles.cssText;
+    expect(css).toMatch(/\.container\s*\{[^}]*background:\s*#1c1c1c/);
+    expect(css).toMatch(/\.breville-readout\s*\{[^}]*color:\s*#fff\s*;/);
+  });
 
   it('renders sanitized states across idle, ready, cooking, keep warm, done, and unavailable', async () => {
     for (const [raw, label] of [['idle', 'Idle'], ['ready', 'Ready for food'], ['cooking', 'Cooking'], ['keeping_warm', 'Keeping warm'], ['done', 'Done'], ['unavailable', 'Unavailable']]) {
