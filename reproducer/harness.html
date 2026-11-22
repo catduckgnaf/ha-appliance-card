@@ -1,0 +1,43 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Synthetic coffee_maker harness</title>
+<style>
+  :root{--accent-color:#ff9800;--divider-color:#333;--secondary-text-color:#888}
+  body{margin:0;padding:12px;font-family:system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+  body.light{--bg:#fafafa;--fg:#212121;--card-background-color:#fff;--primary-text-color:#212121;--secondary-text-color:#727272;--divider-color:#e0e0e0}
+  body.dark{--bg:#111;--fg:#e1e1e1;--card-background-color:#1c1c1c;--primary-text-color:#e1e1e1;--secondary-text-color:#9b9b9b}
+  ha-card{display:block;background:var(--card-background-color);border-radius:12px}
+  .cell{margin:0 0 14px}
+  .cap{font:600 12px system-ui;margin:0 0 4px;opacity:.8}
+  #grid{display:grid;gap:8px 12px;grid-template-columns:repeat(var(--cols,1),minmax(0,1fr))}
+</style></head>
+<body>
+<div id="grid"></div>
+<script type="module">
+  // ha-card is a Home Assistant frontend element; this synthetic page defines a bare stand-in.
+  customElements.define('ha-card', class extends HTMLElement {});
+  const p = new URLSearchParams(location.search);
+  document.body.className = p.get('theme') || 'dark';
+  document.getElementById('grid').style.setProperty('--cols', p.get('cols') || '1');
+  await import('./appliance-card.js');
+  const st = (id, state, attributes = {}) => ({entity_id:id,state,attributes,last_changed:'2026-01-01T00:00:00Z',last_updated:'2026-01-01T00:00:00Z',context:{id:'x',parent_id:null,user_id:null}});
+  const ID = 'sensor.demo_duck_machine_status';
+  const scenarios = (p.get('set') || 'Ready,Off,Brewing,Espresso,Heating,Rinsing,Unavailable,unknown').split(',');
+  scenarios.push(...(p.get('extra') ? p.get('extra').split(',') : []));
+  const grid = document.getElementById('grid');
+  window.__cards = [];
+  for (const s of scenarios) {
+    const cell = document.createElement('div'); cell.className = 'cell';
+    cell.innerHTML = `<div class="cap">${s}</div>`;
+    const card = document.createElement('appliance-card');
+    const config = { type: 'custom:appliance-card', appliance_type: 'coffee_maker', machine_state_entity: s === '__missing' ? 'sensor.not_there' : ID };
+    if (s === '__unconfigured') delete config.machine_state_entity;
+    if (s === 'Alert') config.alarm_code_entity = 'sensor.demo_duck_blocking_alarms';
+    card.setConfig(config);
+    card.hass = { states: { [ID]: st(ID, s === 'Alert' ? 'Ready' : s), 'sensor.demo_duck_blocking_alarms': st('sensor.demo_duck_blocking_alarms','1') }, callService: async () => { window.__serviceCalls = (window.__serviceCalls||0)+1; } };
+    cell.appendChild(card); grid.appendChild(cell); window.__cards.push(card);
+  }
+  await Promise.all(window.__cards.map(c => c.updateComplete));
+  await Promise.all([...document.querySelectorAll('appliance-card')].flatMap(c => [...c.shadowRoot.querySelectorAll('img')].map(i => i.decode().catch(()=>{}))));
+  window.__ready = true;
+</script></body></html>

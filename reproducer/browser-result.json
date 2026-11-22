@@ -1,0 +1,1192 @@
+{
+ "mobile-dark": [
+  {
+   "scenario": "Ready",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 297,
+   "labelLeft": 260,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Off",
+   "label": "Off",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 289,
+   "labelLeft": 267,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Brewing",
+   "label": "Brewing",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 307,
+   "labelLeft": 250,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Espresso",
+   "label": "Espresso",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 307,
+   "labelLeft": 249,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Heating",
+   "label": "Heating",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 305,
+   "labelLeft": 252,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Rinsing",
+   "label": "Rinsing",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 303,
+   "labelLeft": 253,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Unavailable",
+   "label": "Unavailable",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 318,
+   "labelLeft": 239,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "unknown",
+   "label": "Unknown",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 309,
+   "labelLeft": 247,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Alert",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 297,
+   "labelLeft": 260,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "__missing",
+   "label": "Not found",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 312,
+   "labelLeft": 244,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "__unconfigured",
+   "label": "Not configured",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 329,
+   "labelLeft": 227,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Dispensing Hot Water",
+   "label": "Dispensing hot water",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 351,
+   "labelLeft": 205,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Preparing Milk",
+   "label": "Preparing milk",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 329,
+   "labelLeft": 227,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  }
+ ],
+ "mobile-dark_calls": 0,
+ "mobile-light": [
+  {
+   "scenario": "Ready",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 297,
+   "labelLeft": 260,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Off",
+   "label": "Off",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 289,
+   "labelLeft": 267,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Brewing",
+   "label": "Brewing",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 307,
+   "labelLeft": 250,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Espresso",
+   "label": "Espresso",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 307,
+   "labelLeft": 249,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Heating",
+   "label": "Heating",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 305,
+   "labelLeft": 252,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Rinsing",
+   "label": "Rinsing",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 303,
+   "labelLeft": 253,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Unavailable",
+   "label": "Unavailable",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 318,
+   "labelLeft": 239,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "unknown",
+   "label": "Unknown",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 309,
+   "labelLeft": 247,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Alert",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 297,
+   "labelLeft": 260,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "__missing",
+   "label": "Not found",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 312,
+   "labelLeft": 244,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "__unconfigured",
+   "label": "Not configured",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 329,
+   "labelLeft": 227,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Dispensing Hot Water",
+   "label": "Dispensing hot water",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 351,
+   "labelLeft": 205,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  },
+  {
+   "scenario": "Preparing Milk",
+   "label": "Preparing milk",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 329,
+   "labelLeft": 227,
+   "imgRight": 179,
+   "labelInsideCard": true,
+   "cardW": 366,
+   "buttons": 0
+  }
+ ],
+ "mobile-light_calls": 0,
+ "desktop-dark": [
+  {
+   "scenario": "Ready",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 315,
+   "labelLeft": 269,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Off",
+   "label": "Off",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 305,
+   "labelLeft": 278,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Brewing",
+   "label": "Brewing",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 327,
+   "labelLeft": 256,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Espresso",
+   "label": "Espresso",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 328,
+   "labelLeft": 255,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Heating",
+   "label": "Heating",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 325,
+   "labelLeft": 259,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Rinsing",
+   "label": "Rinsing",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 323,
+   "labelLeft": 261,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Unavailable",
+   "label": "Unavailable",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 341,
+   "labelLeft": 242,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "unknown",
+   "label": "Unknown",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 331,
+   "labelLeft": 253,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Alert",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 315,
+   "labelLeft": 269,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "__missing",
+   "label": "Not found",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 335,
+   "labelLeft": 249,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "__unconfigured",
+   "label": "Not configured",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 356,
+   "labelLeft": 228,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Dispensing Hot Water",
+   "label": "Dispensing hot water",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 368,
+   "labelLeft": 215,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Preparing Milk",
+   "label": "Preparing milk",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 356,
+   "labelLeft": 228,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  }
+ ],
+ "desktop-dark_calls": 0,
+ "desktop-light": [
+  {
+   "scenario": "Ready",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 315,
+   "labelLeft": 269,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Off",
+   "label": "Off",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 305,
+   "labelLeft": 278,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Brewing",
+   "label": "Brewing",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 327,
+   "labelLeft": 256,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Espresso",
+   "label": "Espresso",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 328,
+   "labelLeft": 255,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Heating",
+   "label": "Heating",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 325,
+   "labelLeft": 259,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Rinsing",
+   "label": "Rinsing",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 323,
+   "labelLeft": 261,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Unavailable",
+   "label": "Unavailable",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 341,
+   "labelLeft": 242,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "unknown",
+   "label": "Unknown",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 331,
+   "labelLeft": 253,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Alert",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 315,
+   "labelLeft": 269,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "__missing",
+   "label": "Not found",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 335,
+   "labelLeft": 249,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "__unconfigured",
+   "label": "Not configured",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 356,
+   "labelLeft": 228,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Dispensing Hot Water",
+   "label": "Dispensing hot water",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 368,
+   "labelLeft": 215,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  },
+  {
+   "scenario": "Preparing Milk",
+   "label": "Preparing milk",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 356,
+   "labelLeft": 228,
+   "imgRight": 180,
+   "labelInsideCard": true,
+   "cardW": 384,
+   "buttons": 0
+  }
+ ],
+ "desktop-light_calls": 0,
+ "narrow-dark": [
+  {
+   "scenario": "Ready",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 243,
+   "labelLeft": 207,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "Off",
+   "label": "Off",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 236,
+   "labelLeft": 214,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "Brewing",
+   "label": "Brewing",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 253,
+   "labelLeft": 197,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "Espresso",
+   "label": "Espresso",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 254,
+   "labelLeft": 196,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "Heating",
+   "label": "Heating",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 251,
+   "labelLeft": 199,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "Rinsing",
+   "label": "Rinsing",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 249,
+   "labelLeft": 200,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "Unavailable",
+   "label": "Unavailable",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 264,
+   "labelLeft": 186,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "unknown",
+   "label": "Unknown",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 256,
+   "labelLeft": 194,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "Alert",
+   "label": "Ready",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 243,
+   "labelLeft": 207,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "__missing",
+   "label": "Not found",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 259,
+   "labelLeft": 191,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "__unconfigured",
+   "label": "Not configured",
+   "active": false,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 276,
+   "labelLeft": 174,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "Dispensing Hot Water",
+   "label": "Dispensing hot water",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 284,
+   "labelLeft": 166,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  },
+  {
+   "scenario": "Preparing Milk",
+   "label": "Preparing milk",
+   "active": true,
+   "iconSrcIsData": true,
+   "iconDecoded": true,
+   "iconNatural": [
+    1024,
+    1024
+   ],
+   "applianceDecoded": true,
+   "labelRight": 276,
+   "labelLeft": 174,
+   "imgRight": 145,
+   "labelInsideCard": true,
+   "cardW": 296,
+   "buttons": 0
+  }
+ ],
+ "narrow-dark_calls": 0,
+ "non_local_requests": [],
+ "local_requests": [
+  "/appliance-card.js",
+  "/harness.html"
+ ]
+}
