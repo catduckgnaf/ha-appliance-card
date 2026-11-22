@@ -369,6 +369,22 @@ export class ApplianceCardEditor extends LitElement {
     const type = newConfig.appliance_type;
     if (!type) return newConfig;
 
+    if (type === 'coffee_maker') {
+      // Coffee makers autofill only from the selected device's own registry entries,
+      // matched on an exact suffix, and skip the generic guesses below. Those fall back
+      // to every entity in HA when no device is chosen or the registry has not loaded,
+      // and some of them (light, fan, lock) would bind another appliance to this card.
+      const scoped = deviceId
+        ? entities.filter((id) => (this.hass as any).entities?.[id]?.device_id === deviceId)
+        : [];
+      const findScoped = (suffix: string, domain: string) =>
+        scoped.find((id) => id.startsWith(domain + '.') && id.toLowerCase().replace(/_\d+$/, '').endsWith(suffix));
+      newConfig.machine_state_entity = newConfig.machine_state_entity || findScoped('_machine_status', 'sensor');
+      newConfig.power_entity = newConfig.power_entity || findScoped('_power', 'switch');
+      newConfig.alarm_code_entity = newConfig.alarm_code_entity || findScoped('_blocking_alarms', 'sensor');
+      return newConfig;
+    }
+
     // 2. Helper to find a specific entity (stripping trailing numeric suffixes like _2, _3)
     const findEntity = (suffixes: string[], domain?: string) => {
       return relevantEntities.find((id) => {
@@ -409,12 +425,6 @@ export class ApplianceCardEditor extends LitElement {
       newConfig.burner_left_rear_power_entity = newConfig.burner_left_rear_power_entity || findEntity(['_left_rear_power_pct'], 'sensor');
       newConfig.burner_right_front_power_entity = newConfig.burner_right_front_power_entity || findEntity(['_right_front_power_pct'], 'sensor');
       newConfig.burner_right_rear_power_entity = newConfig.burner_right_rear_power_entity || findEntity(['_right_rear_power_pct'], 'sensor');
-    }
-
-    if (type === 'coffee_maker') {
-      newConfig.machine_state_entity = newConfig.machine_state_entity || findEntity(['_machine_status'], 'sensor');
-      newConfig.power_entity = newConfig.power_entity || findEntity(['_power'], 'switch');
-      newConfig.alarm_code_entity = newConfig.alarm_code_entity || findEntity(['_blocking_alarms'], 'sensor');
     }
 
     if (type === 'refrigerator') {

@@ -1,6 +1,6 @@
 # Appliance Card
 
-A custom Home Assistant card for tracking and controlling home appliances — refrigerators, microwaves, ovens, cooktops, dishwashers, washers, dryers kettles, and coffee makers — from SmartThings, LocalThings and others.
+A custom Home Assistant card for tracking and controlling home appliances — refrigerators, microwaves, ovens, cooktops, dishwashers, washers, dryers, kettles, and coffee makers — from SmartThings, LocalThings and others.
 
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=firstof9&repository=ha-appliance-status-card&category=plugin)
 
@@ -200,5 +200,7 @@ stage_map:
   Off: idle
   Brewing: coffee
 ```
+
+The card shows the integration's own status text (Ready, Off, Rinsing, Unavailable, Unknown). A missing or unset status entity reads "Not found" or "Not configured", never Off or Ready. Brewing and milk stages use the coffee icon, heating and hot water use the boil icon, and `espresso` has its own icon; all are bundled, so no files need to be copied into `www/`. Autofill only binds entities registered to the selected device.
 
 Do not map unavailable or unknown states to ready. Integration state meanings vary; verify the exact state tokens before configuring `stage_map`.
